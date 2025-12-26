@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healthcare Leadership Summit</title>
+  <style>
+    /* ===== ベース ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Roboto, sans-serif;
+      color: #1c1c1c;
+      background: #ffffff;
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== レイアウト幅：A4固定→レスポンシブへ ===== */
+    .page {
+      max-width: 1000px;        /* PCでの最大幅 */
+      margin: 0 auto;
+      padding: 0 16px 32px;     /* サイド余白 */
+    }
+
+    /* ===== ヘッダー ===== */
+    .header {
+      position: relative;
+      color: #fff;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+      overflow: hidden;        /* 背景擬似要素のはみ出し防止 */
+    }
+    .header::before{
+      content:"";
+      position:absolute; inset:0;
+      background:url('https://media.artnewsjapan.com/wp-content/uploads/2022/01/11182050/5_piano_0ba0237773-scaled.jpg') center/cover no-repeat;
+      opacity:.15;
+      pointer-events:none;
+    }
+    .header-inner{
+      position:relative; z-index:1;
+      padding: 40px 16px 28px; /* 上部ゆったり */
+      text-align:center;
+    }
+    .summit-logo{
+      font-size:12px; letter-spacing: .2em; text-transform: uppercase;
+      color:#ffd700; margin-bottom:8px; font-weight:500;
+    }
+    .badge{
+      display:inline-block;
+      background:rgba(255,215,0,.18);
+      border:2px solid #ffd700; color:#ffd700;
+      padding:6px 14px; border-radius:20px; font-size:10px; font-weight:700;
+      margin-bottom:12px; letter-spacing:.04em; white-space:nowrap;
+    }
+    .header h1{
+      margin: 8px 0 12px;
+      font-size: clamp(20px, 3.2vw, 34px);
+      line-height:1.35; font-weight:800;
+    }
+    .title-accent{ color:#ffd700; display:block; font-weight:800; }
+           .lecture-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            padding: 32px 40px;
+            border-radius: 16px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lecture-label {
+            font-size: 16px;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .lecture-title {
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.6;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+
+    /* ヘッダー内説明ボックス（問題箇所の修正） */
+    .intro {
+      margin: 14px auto 0;
+      max-width: 880px;                  /* はみ出し防止 */
+      padding: 12px 14px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.7;
+      text-decoration: none;             /* 予期せぬ下線の抑止 */
+    }
+    .intro * { text-decoration: none !important; } /* テーマCSSの上書き対策 */
+    .intro-list{ margin: 6px 0 0 0; padding-left: 1em; }
+    .intro-list li{ margin: 3px 0; }
+
+    /* ===== コンテンツ ===== */
+    .section{ margin: 18px 0; }
+    .card{
+      background: #fff;
+      border:2px solid #2c5282;
+      border-radius:12px;
+      padding:16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.03);
+    }
+
+    /* スピーカー */
+    .speaker{
+      display:flex; gap:16px; align-items:flex-start; flex-wrap: wrap; /* モバイルで折り返し */
+    }
+    .speaker-photo{
+      width: 120px; height: 150px; object-fit: cover;
+      border:2px solid #2c5282; border-radius:8px; background:#f3f4f6;
+      flex:0 0 auto;
+    }
+    .speaker-info{ flex: 1 1 260px; min-width: 260px; }
+    .speaker-label{ color:#1e3a5f; font-size:12px; font-weight:700; margin-bottom:4px; }
+    .speaker-name{
+      font-size: clamp(16px, 2.2vw, 22px);
+      color:#2c5282; font-weight:800; line-height:1.35; margin:0 0 6px;
+    }
+    .speaker-bio{ font-size: 13px; color:#555; }
+
+    /* 情報グリッド */
+    .grid{ display:grid; gap:12px; grid-template-columns: repeat(2, 1fr); }
+    .ibox{
+      background:#f8f9fa; border-left:3px solid #2c5282; border-radius:8px; padding:12px;
+    }
+    .ibox .ttl{ font-weight:800; color:#1e3a5f; margin-bottom:4px; }
+
+    /* スケジュール */
+    .schedule{ border:2px solid #e9ecef; border-radius:10px; padding:12px; background:#fff; }
+    .schedule h3{ margin:0 0 8px; text-align:center; color:#1e3a5f; font-size:18px; }
+    .row{ display:flex; gap:10px; padding:6px 0; border-bottom:1px dashed #e9ecef; font-size:14px; }
+    .row:last-child{ border-bottom:none; }
+    .time{ min-width:56px; color:#2c5282; font-weight:800; }
+
+    /* 参加者 */
+    .participants .lead{ text-align:center; color:#666; font-size:13px; margin:4px 0 8px; }
+    .pgrid{ display:grid; gap:8px; grid-template-columns: repeat(2, 1fr); }
+    .pitem{ background:#fff; border-left:3px solid #ffd700; border-radius:6px; padding:8px; font-size:13px; }
+    .pitem .cat{ color:#666; font-size:12px; }
+
+    /* フッター */
+    .footer{
+      background:#1e3a5f; color:#fff; margin-top:24px; padding:16px 0;
+    }
+    .cta{
+      background:#ffd700; color:#1e3a5f; border-radius:10px; padding:12px;
+      text-align:center; margin: 0 auto 12px; max-width: 880px; font-weight:700;
+    }
+    .contact{
+      display:grid; gap:8px; grid-template-columns: 1fr 1fr;
+      max-width:880px; margin:0 auto; font-size:14px;
+    }
+    .contact .item{ background: rgba(255,255,255,.12); padding:8px; border-radius:6px; }
+    .copyright{ text-align:center; font-size:12px; opacity:.85; margin-top:10px; }
+
+    /* ===== モバイル最適化 ===== */
+    @media (max-width: 768px){
+      .grid{ grid-template-columns: 1fr; }
+      .pgrid{ grid-template-columns: 1fr; }
+      .intro{ font-size: 13px; }
+      .row{ font-size: 13px; }
+      .contact{ grid-template-columns: 1fr; }
+      .speaker-photo{ width: 100px; height: 130px; }
+    }
+    @media (max-width: 480px){
+      .header-inner{ padding: 28px 14px 20px; }
+      .badge{ font-size: 9px; padding: 5px 10px; }
+      .intro{ padding: 10px 12px; }
+      .speaker-photo{ width: 90px; height: 120px; }
+    }
+
+    /* 印刷時は影や余白だけ抑える */
+    @media print{
+      .page{ max-width:none; padding:0; }
+      .card, .schedule{ box-shadow:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner page">
+      <div class="summit-logo">第２回 Healthcare Leadership Summit</div>
+      <div class="badge">Healthcare Transformation &amp; Leadership Impact</div>
+      <h1>
+        Healthcareを革新する意思決定者が集う、<br><span class="title-accent">対話の場</span>
+      </h1>
+
+      <!-- ★問題の出ていた説明ブロック：幅制御＆下線抑止済み -->
+      <div class="intro">
+        <p>本年の Healthcare Leadership Summitでは、テーマを “Healthcare Transformation &amp; Leadership Impact” と題し、</p>
+        <ul class="intro-list">
+          <li>医療起点の価値創造をいかに事業成長と両立させるか</li>
+          <li>リーダーシップがもたらす組織変革・産業変革とは何か</li>
+          <li>次世代の創薬・医療DX・ウェルビーイング産業の在り方</li>
+        </ul>
+        <p>について、実践事例と議論を通じて深く探求していきます。</p>
+      </div>
+                  <div class="lecture-highlight">
+                <div class="lecture-label">Special Keynote</div>
+                <div class="lecture-title">
+                    成熟産業の限界を突破する『再定義』の経営<br>
+                    かつらメーカーから世界のウェルネスカンパニーへ、V字回復の軌跡
+                </div>
+            </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Speaker -->
+    <section class="section card speaker">
+      <img class="speaker-photo" src="https://www.nsjournal.jp/wp-content/uploads/2024/11/IMG_9504.jpg" alt="金城聖文様（画像URLは差替え可）" />
+      <div class="speaker-info">
+        <div class="speaker-label">Keynote Speaker</div>
+        <h2 class="speaker-name">株式会社アデランス<br>元代表取締役グループCEO<br>津村 佳宏 様</h2>
+        <p class="speaker-bio">
+          1982年3月、株式会社アデランス入社。早稲田大学卒業。アデランスサロンでの業務を経て、営業部長、研究開発部長などを歴任。2017年3月、代表取締役社長就任（現任）アデランスを総合毛髪企業から、美容・健康・医療のウェルネスカンパニーへと導く。
+        </p>
+      </div>
+    </section>
+
+    <!-- Info grid -->
+    <section class="section grid">
+      <div class="ibox">
+        <div class="ttl">📅 開催日時</div>
+        <div>2026年2月2日（月）<br>17:30 開場 / 18:00 勉強会 / 19:00 懇親会 / 21:00 終了予定</div>
+      </div>
+      <div class="ibox">
+        <div class="ttl">📍 会場</div>
+        <div>オルクドール•サロンAOYAMA（東京都港区南青山三丁目１番34号 3rd MINAMI AOYAMA 13階）</div>
+      </div>
+      <div class="ibox">
+        <div class="ttl">💰 参加費</div>
+        <div><strong style="color:#e53e3e;"> 10,000円 </strong>（ケータリング・ドリンク付）</div>
+      </div>
+      <div class="ibox">
+        <div class="ttl">🏢 主催</div>
+        <div>株式会社エイチ　代表取締役 伏見 匡矩</div>
+        <div>米長 二郎</div>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="section schedule">
+      <h3>Program / タイムスケジュール</h3>
+      <div class="row"><div class="time">17:30</div><div>開場・受付開始</div></div>
+      <div class="row"><div class="time">18:00</div><div><strong>特別講演</strong> - 津村 佳宏 様による基調講演</div></div>
+      <div class="row"><div class="time">19:00</div><div><strong>ネットワーキング懇親会</strong> - お弁当・ドリンクを楽しみながら交流</div></div>
+      <div class="row"><div class="time">21:00頃</div><div>終了予定</div></div>
+    </section>
+
+    <!-- Participants -->
+    <section class="section card participants">
+      <h3 style="text-align:center; color:#1e3a5f; margin:0 0 6px;">Participants / ご招待予定の皆様</h3>
+      <p class="lead">製薬・医療機器・美容医療・ヘルスケア業界のトップ企業の、経営者・役員クラスの皆様にお声がけしております。</p>
+      <div class="pgrid">
+        <div class="pitem"><div class="cat">✓ 大手製薬企業</div><div>代表取締役・取締役クラス</div></div>
+        <div class="pitem"><div class="cat">✓ 医療機器メーカー</div><div>元代表取締役・事業部長</div></div>
+        <div class="pitem"><div class="cat">✓ 美容医療グループ</div><div>代表取締役・役員クラス</div></div>
+        <div class="pitem"><div class="cat">✓ ヘルスケアベンチャー</div><div>創業者・代表取締役</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page">
+      <div class="cta">
+        参加お申し込み・お問い合わせ — 業界の未来を共に創る仲間として、ぜひご参加ください
+      </div>
+      <div class="contact">
+        <div class="item"><strong>📧 Email</strong><br>fushimi@eichiii.co.jp</div>
+        <div class="item"><strong>📞 TEL</strong><br>080-5050-0243</div>
+      </div>
+      <div class="copyright">Healthcare Leadership Summit 2025</div>
+    </div>
+  </footer>
+</body>
+</html>
