@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R18オトナ♡プラネタリウム 2回戦 -古代ギリシャのマスカレードハレンチナイト-</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        night: '#05060b',
+                        gold: {
+                            light: '#f1e2b3',
+                            DEFAULT: '#c5a059',
+                            dark: '#937138',
+                        },
+                        erotic: {
+                            purple: '#2d142c',
+                            pink: '#e03e7a',
+                            red: '#740c2d',
+                            rose: '#dfa2b2'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Noto Serif JP', 'serif'],
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 3Dカード反転用のパースペクティブ */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        
+        /* 輝く微細な星屑の背景 */
+        .star-dust {
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 40px 70px, rgba(241, 226, 179, 0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 150px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 240px, rgba(224, 62, 122, 0.5), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 220px 300px, #fff, rgba(0,0,0,0));
+            background-size: 300px 300px;
+            animation: slowScroll 180s linear infinite;
+        }
+        @keyframes slowScroll {
+            from { background-position: 0 0; }
+            to { background-position: 300px 600px; }
+        }
+
+        /* 艶やかな光のゆらめき */
+        .glow-orb {
+            filter: blur(140px);
+            mix-blend-mode: plus-lighter;
+            animation: pulseGlow 12s ease-in-out infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.25; }
+            100% { transform: scale(1.2) translate(10px, -20px); opacity: 0.4; }
+        }
+
+        /* スムーススクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-night text-gray-300 font-sans selection:bg-gold selection:text-night overflow-x-hidden antialiased">
+
+    <!-- 空間を彩るアンビエント照明 -->
+    <div class="fixed inset-0 star-dust opacity-30 pointer-events-none z-0"></div>
+    <div class="fixed -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-erotic-purple glow-orb pointer-events-none z-0"></div>
+    <div class="fixed top-1/3 -right-60 w-[500px] h-[500px] rounded-full bg-erotic-red glow-orb pointer-events-none z-0" style="animation-delay: -4s;"></div>
+    <div class="fixed -bottom-40 left-1/3 w-[600px] h-[600px] rounded-full bg-night/50 glow-orb border border-gold/10 pointer-events-none z-0" style="animation-delay: -8s;"></div>
+
+    <!-- プレミアムナビゲーション -->
+    <header class="relative z-50 border-b border-gold/10 backdrop-blur-xl bg-night/70 sticky top-0 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="text-gold font-serif text-2xl tracking-[0.25em] font-light">M A S Q U E R A D E</span>
+                <span class="hidden md:inline-block text-[10px] tracking-widest text-gold-light border border-gold/30 px-3 py-1 rounded-full uppercase">
+                    Executives, Physicians & Beauties
+                </span>
+            </div>
+            <a href="#reserve" class="relative group overflow-hidden border border-gold/40 hover:border-gold px-6 py-2.5 rounded-full text-xs tracking-widest uppercase transition duration-500">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-gold-dark/20 to-gold/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                <span class="relative text-gold group-hover:text-gold-light font-semibold transition-colors duration-300">秘密の席を確保する</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="relative z-10 pt-24 pb-40 flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-8">
+            
+            <!-- サブキャッチ / タグライン -->
+            <div class="inline-flex items-center space-x-3 mb-2 animate-pulse">
+                <span class="h-px w-8 bg-gold/50"></span>
+                <p class="text-gold tracking-[0.3em] uppercase font-serif text-xs md:text-sm">
+                    Snaq & Planetarium Experience for Select Members
+                </p>
+                <span class="h-px w-8 bg-gold/50"></span>
+            </div>
+            
+            <!-- メインタイトル -->
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-serif font-light text-transparent bg-clip-text bg-gradient-to-b from-white via-gold-light to-gold tracking-widest leading-snug">
+                R18オトナ♡プラネタリウム<br>
+                <span class="text-xl sm:text-2xl md:text-3.5xl block mt-6 font-sans font-bold text-erotic-pink tracking-[0.25em] drop-shadow-lg">
+                    2回戦 -古代ギリシャのマスカレードハレンチナイト-
+                </span>
+            </h1>
+
+            <!-- 洗練されたサブコピー -->
+            <p class="text-gray-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base leading-loose font-light tracking-wider pt-6">
+                「仮面」をまとい、社会的な肩書も、現実の素顔もすべて闇に葬る。<br class="hidden md:inline">
+                経営者、医師、そして選ばれし美女たちが、本能と知性を交差させ、生命の根源（種の保存）を語り合う特別な秘密結社。
+            </p>
+
+            <!-- イベントステータス（アイコン付き） -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 pt-10 text-xs tracking-widest text-gold-light">
+                <div class="flex items-center space-x-2 bg-white/[0.02] border border-gold/10 backdrop-blur-md px-5 py-3 rounded-full">
+                    <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>都内某所の秘密のスナック（仮面は会場にて支給）</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-white/[0.02] border border-gold/10 backdrop-blur-md px-5 py-3 rounded-full">
+                    <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>20:00 - 23:00（開場 19:40）</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-12">
+                <a href="#reserve" class="inline-block relative group px-12 py-5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-night font-bold tracking-widest text-sm shadow-2xl hover:shadow-gold/20 transition duration-500 transform hover:-translate-y-1">
+                    完全紹介・事前審査制（限定15名）
+                </a>
+                <p class="text-[10px] text-gray-500 tracking-widest mt-4">
+                    参加費：10,000円 / プレミアムドリンク・フード・特製ベネチアンマスク付
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- イントロダクション（哲学と本能への回帰） -->
+    <section class="relative z-10 py-32 bg-gradient-to-b from-transparent via-night/95 to-night px-6">
+        <div class="max-w-3xl mx-auto border border-gold/20 bg-gradient-to-b from-white/[0.03] to-white/[0.01] backdrop-blur-md rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-2xl">
+            
+            <!-- 月桂樹のSVG装飾 -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 opacity-[0.03] pointer-events-none text-gold">
+                <svg fill="currentColor" viewBox="0 0 100 100"><path d="M50 15c-1.5 0-3 .5-4.2 1.5C40 21.2 30 25 20 25c-1.1 0-2 .9-2 2v20c0 15 8.5 28.5 21.3 35.3l10.7 5.7 10.7-5.7C73.5 75.5 82 62 82 47V27c0-1.1-.9-2-2-2-10 0-20-3.8-25.8-8.5-1.2-1-2.7-1.5-4.2-1.5z"></path></svg>
+            </div>
+            
+            <div class="text-center mb-10">
+                <span class="text-[10px] tracking-[0.3em] text-gold uppercase">The Philosophy of Eros</span>
+                <h2 class="text-2xl md:text-4.5xl font-serif text-gold font-light mt-2 leading-snug">
+                    物理的な仮面をつけることで、<br>心の「完璧な仮面」を脱ぎ捨てる。
+                </h2>
+            </div>
+            
+            <div class="space-y-8 text-gray-400 leading-relaxed text-sm md:text-base font-light tracking-wide">
+                <p>
+                    冷徹な経営判断を下す日々、人の命を背負う緊迫のオペ。常に「完璧な強者」として社会に君臨する経営者や医師たち。そして、その視線を一身に浴びる美しき女性たち。
+                </p>
+                <p>
+                    この夜、あなたが身にまとうのは、きらびやかな**「ベネチアンマスク（仮面）」**のみ。お互いの素性や社会的肩書、そして顔の表情さえも半分隠されたその瞬間、理性のロックが静かに外れます。
+                </p>
+                <p>
+                    古代ギリシャにおいて、「エロス（愛欲）」は宇宙を創造する最も高尚で美しいエネルギー（種の保存への衝動）でした。星空がドームを包む暗闇の中、日頃の鎧から完全に解放され、本能と知性、そしてピュアな「本音」だけで交差する、美しくも妖艶なマスカレードスナックへようこそ。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 二回戦の全貌 -->
+    <section class="relative z-10 py-32 px-6 bg-night/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-24">
+                <span class="text-[10px] tracking-[0.4em] text-gold uppercase">The Program of the Night</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-light text-white mt-3 tracking-widest">THE ACTS</h2>
+                <div class="h-px w-20 bg-gold/30 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Act 1 -->
+                <div class="relative flex flex-col justify-between border border-gold/10 bg-gradient-to-b from-white/[0.02] to-transparent p-10 rounded-2xl group hover:border-gold/30 transition-all duration-500 shadow-lg">
+                    <div class="absolute -top-4 left-10 bg-gold-dark text-night font-bold tracking-widest text-[9px] px-4 py-1.5 rounded-full uppercase">
+                        1回戦 | 20:00 - 21:15
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-serif font-light text-gold-light mt-4 mb-6 leading-snug">
+                            古代ギリシャのハレンチ神話と<br>エロスの本質
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light tracking-wide mb-8">
+                            実はあまりにも人間くさく、欲望に忠実だったギリシャの神々。生命の根源としての愛、そして「種の保存」に対する生物学的・哲学的な衝動の歴史を、極上の美酒を片手にアカデミックかつセンシュアルに紐解きます。
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-xs text-gray-400 font-light tracking-widest border-t border-gold/10 pt-6">
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">✦</span> デュオニュソス（美酒と陶酔の神）の特製ハーブカクテル
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-gold mr-3">✦</span> 完璧な知性と本能が融合する、大人の性のリベラルアーツ
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Act 2 -->
+                <div class="relative flex flex-col justify-between border-2 border-erotic-pink/30 bg-gradient-to-b from-erotic-purple/40 to-transparent p-10 rounded-2xl group hover:border-erotic-pink transition-all duration-500 shadow-2xl">
+                    <div class="absolute -top-4 left-10 bg-erotic-pink text-white font-bold tracking-widest text-[9px] px-4 py-1.5 rounded-full uppercase animate-pulse">
+                        2回戦 | 21:30 - 23:00
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-serif font-light text-gold-light mt-4 mb-6 leading-snug">
+                            マスカレード・プラネタリウム と<br>本音オラクル
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed font-light tracking-wide mb-8">
+                            会場は満天の星空きらめく完全なる暗闇へ。美しい仮面をつけたまま、視覚を遮られた空間であなたの感性は極限まで研ぎ澄まされます。肩書きを捨て去り、お互いの「本能のバブみ」や「秘められた性愛観」をカードを媒介に認め合う艶やかなゲーム。
+                        </p>
+                    </div>
+                    <ul class="space-y-3 text-xs text-gray-400 font-light tracking-widest border-t border-erotic-pink/20 pt-6">
+                        <li class="flex items-center">
+                            <span class="text-erotic-pink mr-3">✦</span> 暗闇で脳をトランスに導くアロマブレンド
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-erotic-pink mr-3">✦</span> 仮面の下の顔を見せずに語る、匿名「本音オラクルカード」
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- インタラクティブカード（オラクルカード） -->
+    <section class="relative z-10 py-32 px-6 bg-gradient-to-b from-night via-erotic-purple/[0.15] to-night">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="text-[10px] tracking-[0.4em] text-gold uppercase">Interactive Mythic Oracle</span>
+            <h2 class="text-2xl md:text-4.5xl font-serif font-light text-gold mt-3 mb-4 tracking-widest">
+                アポロンの神託カード
+            </h2>
+            <p class="text-gray-400 text-xs md:text-sm font-light tracking-widest mb-16 max-w-lg mx-auto leading-relaxed">
+                イベントで実際に使われる「本音を引き出すオラクルカード」を1枚、ここでお引きください。あなたの心の鎧を暴きます。
+            </p>
+
+            <!-- 3Dフリップカードコンテナ -->
+            <div class="relative w-72 h-[420px] mx-auto perspective-1000 group cursor-pointer" onclick="drawCard()">
+                <!-- カード裏面 -->
+                <div id="card-back" class="absolute inset-0 bg-gradient-to-b from-night via-[#1a0e19] to-[#0d0714] border-2 border-gold/40 rounded-2xl shadow-3xl flex flex-col items-center justify-between p-8 transition-all duration-700 ease-out transform backface-hidden hover:border-gold">
+                    <!-- 古代ギリシャ風の幾何学装飾 (SVG) -->
+                    <div class="w-full h-full border border-gold/20 rounded-lg p-4 flex flex-col items-center justify-between relative">
+                        <div class="absolute top-2 left-2 text-gold/30 font-serif text-[10px]">E</div>
+                        <div class="absolute top-2 right-2 text-gold/30 font-serif text-[10px]">R</div>
+                        <div class="absolute bottom-2 left-2 text-gold/30 font-serif text-[10px]">O</div>
+                        <div class="absolute bottom-2 right-2 text-gold/30 font-serif text-[10px]">S</div>
+                        
+                        <!-- ギリシャ幾何学枠 -->
+                        <div class="w-full h-full border-2 border-double border-gold/10 flex flex-col items-center justify-center">
+                            <div class="w-20 h-20 border border-gold/30 rounded-full flex items-center justify-center mb-6">
+                                <svg class="w-10 h-10 text-gold-light/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gold font-serif tracking-[0.3em] text-sm uppercase">Draw the Oracle</p>
+                            <p class="text-[9px] text-gray-500 tracking-[0.2em] mt-3">タップして神託を受け取る</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- カード表面 -->
+                <div id="card-front" class="absolute inset-0 bg-night border-2 border-erotic-pink/50 rounded-2xl shadow-3xl flex flex-col items-center justify-between p-8 transition-all duration-700 ease-out transform rotate-y-180 backface-hidden opacity-0 pointer-events-none hover:border-erotic-pink">
+                    <div class="w-full h-full border border-erotic-pink/10 rounded-lg p-4 flex flex-col items-center justify-between relative">
+                        <span class="text-erotic-pink font-serif text-[10px] tracking-widest uppercase">✦ Oracle Answer ✦</span>
+                        <div class="my-auto py-6">
+                            <p id="oracle-question" class="text-gold-light text-base md:text-lg font-serif leading-loose tracking-wider">
+                                -- 神託準備中 --
+                            </p>
+                        </div>
+                        <button class="text-[10px] text-gray-500 tracking-widest hover:text-gold transition duration-300 underline underline-offset-4" onclick="resetCard(event)">
+                            もう一度神託を引く
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 注記 -->
+            <p class="text-xs text-gold/60 mt-10 italic tracking-widest font-light">
+                ※これらはすべて、当日の「2回戦」で参加者同士が本音を打ち明け合うための特別なカード（トランプ）となります。
+            </p>
+        </div>
+    </section>
+
+    <!-- チケット料金＆シミュレーション -->
+    <section class="relative z-10 py-32 px-6 bg-night/80">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-24">
+                <span class="text-[10px] tracking-[0.4em] text-gold uppercase">Ticket Options</span>
+                <h2 class="text-3xl font-serif font-light text-gold tracking-widest mt-3">TICKET & PLAN</h2>
+                <p class="text-gray-400 text-xs tracking-widest mt-2 font-light">最高峰の身分を隠して語り合う席種一覧</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- レギュラー -->
+                <div class="border border-gold/10 bg-white/[0.01] p-10 rounded-3xl flex flex-col justify-between hover:border-gold/30 hover:bg-white/[0.02] transition-all duration-500 shadow-xl">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-serif font-light text-white">レギュラーサロン席</h3>
+                            <span class="text-gold font-serif text-2xl font-light">¥10,000</span>
+                        </div>
+                        <p class="text-gray-500 text-[10px] tracking-widest uppercase mb-6">消費税込・限定10名</p>
+                        <hr class="border-gold/10 my-6">
+                        <ul class="space-y-4 text-xs tracking-widest font-light text-gray-400">
+                            <li class="flex items-center">✓ 1回戦＆2回戦すべてのプログラム</li>
+                            <li class="flex items-center">✓ プレミアムカクテル/ワイン 2杯付</li>
+                            <li class="flex items-center">✓ 古代ギリシャ風 官能フィンガーフード</li>
+                            <li class="flex items-center">✓ 会場支給の特製ベネチアンマスク</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPlan('regular')" class="w-full mt-10 border border-gold text-gold font-bold tracking-widest text-xs uppercase py-4 rounded-full hover:bg-gold hover:text-night transition duration-500">
+                        このプランを選択
+                    </button>
+                </div>
+
+                <!-- VIP -->
+                <div class="border-2 border-erotic-pink/30 bg-gradient-to-b from-erotic-purple/20 to-transparent p-10 rounded-3xl flex flex-col justify-between relative overflow-hidden shadow-2xl hover:border-erotic-pink transition-all duration-500">
+                    <div class="absolute -right-20 -top-20 w-44 h-44 bg-erotic-pink/10 rounded-full filter blur-2xl"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-xl font-serif font-light text-gold-light">VIPソファー特別席</h3>
+                                <span class="block text-[8px] tracking-[0.2em] text-erotic-pink font-bold mt-2 uppercase">Only 2 groups</span>
+                            </div>
+                            <span class="text-erotic-pink font-serif text-2xl font-light">¥20,000</span>
+                        </div>
+                        <p class="text-gray-500 text-[10px] tracking-widest uppercase mb-6">同伴可能・限定4席</p>
+                        <hr class="border-gold/20 my-6">
+                        <ul class="space-y-4 text-xs tracking-widest font-light text-gray-300">
+                            <li class="flex items-center">✓ レギュラー特典すべて包含</li>
+                            <li class="flex items-center text-erotic-rose font-medium">★ 特級ヴィンテージシャンパン（ボトル）</li>
+                            <li class="flex items-center">✓ プラネタリウムを最も贅沢に眺める特別寝そべりソファー</li>
+                            <li class="flex items-center">✓ 主催者とのシークレットブレスト / 後日ディナー（任意）</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPlan('vip')" class="w-full mt-10 bg-gradient-to-r from-erotic-pink to-erotic-red text-white font-bold tracking-widest text-xs uppercase py-4 rounded-full hover:shadow-lg hover:shadow-erotic-pink/30 transition duration-500">
+                        このプランを選択
+                    </button>
+                </div>
+            </div>
+
+            <!-- 計算シミュレーター -->
+            <div class="mt-16 p-8 bg-white/[0.01] border border-gold/10 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-8 backdrop-blur-md">
+                <div>
+                    <h4 class="text-sm font-semibold tracking-widest text-gold-light">ご選択中のチケット見積もり</h4>
+                    <p class="text-xs text-gray-400 mt-2 tracking-wider">プラン：<span id="selected-plan-text" class="text-white font-bold">レギュラーサロン席</span></p>
+                </div>
+                <div class="flex items-center gap-8">
+                    <div class="text-right">
+                        <p class="text-[9px] text-gray-500 tracking-widest uppercase">お支払総額（税込）</p>
+                        <p class="text-3xl font-serif font-light text-gold mt-1" id="total-price">¥10,000</p>
+                    </div>
+                    <a href="#reserve" class="bg-gold hover:bg-gold-light text-night font-bold tracking-widest text-xs uppercase px-8 py-4 rounded-full transition duration-500">
+                        予約フォームへ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お申込みフォーム -->
+    <section id="reserve" class="relative z-10 py-32 px-6 bg-gradient-to-b from-night via-erotic-purple/[0.1] to-night">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-[10px] tracking-[0.4em] text-gold uppercase">Reservation Gateway</span>
+                <h2 class="text-3xl md:text-4.5xl font-serif font-light text-white mt-3">
+                    秘密のゲートを開く
+                </h2>
+                <p class="text-gray-400 text-xs tracking-widest mt-2 leading-relaxed font-light">
+                    お席に限りがございます（先着15名様・審査制）。必要事項をご記入の上、ご申請ください。
+                </p>
+            </div>
+
+            <!-- フォーム本体 -->
+            <form id="reservation-form" onsubmit="handleFormSubmit(event)" class="space-y-8 bg-white/[0.01] border border-gold/10 p-10 rounded-3xl shadow-3xl backdrop-blur-xl">
+                <!-- 席種選択（連動） -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">ご希望の席種</label>
+                    <select id="form-plan" onchange="updatePriceFromForm()" class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white tracking-widest focus:outline-none focus:border-gold transition">
+                        <option value="regular">レギュラーサロン席（¥10,000）</option>
+                        <option value="vip">VIPソファー特別席（¥20,000）</option>
+                    </select>
+                </div>
+
+                <!-- 属性選択 -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">ご自身の属性</label>
+                    <select required class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white tracking-widest focus:outline-none focus:border-gold transition">
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="executive">経営者・起業家</option>
+                        <option value="doctor">医師・医療従事者</option>
+                        <option value="beauty">選ばれし美女</option>
+                    </select>
+                </div>
+
+                <!-- お名前 -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">お名前（ニックネーム可）</label>
+                    <input type="text" required placeholder="例：ヘラクレス" class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white placeholder-gray-600 tracking-widest focus:outline-none focus:border-gold transition">
+                </div>
+
+                <!-- 業種・会社名 -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">会社名 または ご自身の活動内容など（任意）</label>
+                    <input type="text" placeholder="例：ITスタートアップ代表、美容皮膚科医" class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white placeholder-gray-600 tracking-widest focus:outline-none focus:border-gold transition">
+                </div>
+
+                <!-- メールアドレス -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">秘密の招待状の送付先（メールアドレス）</label>
+                    <input type="email" required placeholder="example@domain.com" class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white placeholder-gray-600 tracking-widest focus:outline-none focus:border-gold transition">
+                    <p class="text-[10px] text-gray-500 tracking-widest mt-2 leading-relaxed">※開催場所の詳細および合言葉は、こちらのメールアドレス宛てにお送りいたします。</p>
+                </div>
+
+                <!-- コメント/意気込み -->
+                <div>
+                    <label class="block text-xs font-semibold text-gold-light uppercase tracking-widest mb-3">仮面の下でさらけ出したい、あなたの本能や本音</label>
+                    <textarea rows="3" placeholder="例：日頃の過酷な仕事や社会的な顔から離れ、社会的ステータスや容姿に捉われない、純粋な本能で語り合える特別なつながりを期待しています。" class="w-full bg-night/80 border border-gold/20 rounded-lg px-4 py-3.5 text-xs text-white placeholder-gray-600 tracking-widest focus:outline-none focus:border-gold transition"></textarea>
+                </div>
+
+                <!-- 誓約書同意 -->
+                <div class="flex items-start">
+                    <input type="checkbox" required id="agree" class="mt-1 mr-3 accent-gold">
+                    <label for="agree" class="text-[10px] text-gray-500 leading-relaxed tracking-wider">
+                        当イベントは大人の健全な知的好奇心とリラクゼーション、パートナーシップ探求のための社交場です。違法行為、一方的な嫌がらせ行為、勧誘行為をせず、紳士淑女としてのマナーを守り、仮面着用ルールに従うことに同意します。
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-night font-bold tracking-widest text-xs uppercase py-4 rounded-full hover:shadow-lg hover:shadow-gold/20 transition duration-500">
+                    招待状を受け取る
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="relative z-10 border-t border-gold/10 py-16 px-6 bg-[#030407] text-center text-gray-600 text-xs">
+        <div class="max-w-6xl mx-auto space-y-6">
+            <p class="text-gold-light/20 font-serif tracking-[0.4em] text-[10px]">ANCIENT GREECE MASQUERADE - PRODUCED BY BUBBAR & NINKATSU</p>
+            <p class="tracking-widest font-light text-[10px]">© 2026 R18オトナ♡プラネタリウム 運営事務局. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 予約完了モーダル (No alert!) -->
+    <div id="success-modal" class="fixed inset-0 bg-night/95 backdrop-blur-md flex items-center justify-center p-6 z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-gradient-to-b from-erotic-purple/40 to-night border border-gold/30 p-10 rounded-3xl max-w-md w-full text-center space-y-8 shadow-3xl relative">
+            <div class="w-20 h-20 bg-gold/10 border border-gold/30 rounded-full flex items-center justify-center mx-auto">
+                <span class="text-gold text-3xl font-serif">✦</span>
+            </div>
+            <h3 class="text-2xl font-serif font-light text-gold tracking-widest">神託の道が開かれました</h3>
+            <p class="text-xs text-gray-400 leading-relaxed tracking-widest">
+                お申込みありがとうございます。ご入力いただいたメールアドレス宛てに、**「秘密の開催場所・合言葉・決済リンク」**をお送りしました。<br><br>
+                当日、鎧を脱いだあなたにお会いできるのを楽しみにしております。
+            </p>
+            <button onclick="closeModal()" class="w-full bg-gold text-night font-bold tracking-widest text-xs uppercase py-4 rounded-full hover:bg-gold-light transition duration-500">
+                画面を閉じる
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript ロジック -->
+    <script>
+        // オラクルカードのお題リスト（経営者・医師・美女の心を揺さぶる、仮面の下のハレンチな本音を引き出すお題）
+        const oracleQuestions = [
+            "「仮面で顔も肩書きも隠したあなた。今夜、目の前の人に一番『触れられたい』あなたの本質はどこですか？」",
+            "「医師・経営者としての理性と、1匹のオス/メスとしての本能。『種の保存』に対するあなたの本気度は何点？」",
+            "「仮面をつけたことで、普段の社会的キャラクターからどれだけ自由になれましたか？」",
+            "「あなたがこれまで『ステータスや美貌』という武器を使って犯した、もっとも美しいハレンチな罪は何ですか？」",
+            "「古代ギリシャの神々のように、もしあらゆるモラルから1日だけ解放されるなら、誰とどんな本能を共有しますか？」",
+            "「完璧なあなただからこそ、仮面の下で『思いきり甘えたい』と思った瞬間を教えてください」"
+        ];
+
+        let isFlipped = false;
+
+        function drawCard() {
+            if (isFlipped) return;
+
+            // ランダムに神託を選択
+            const randomIndex = Math.floor(Math.random() * oracleQuestions.length);
+            document.getElementById('oracle-question').innerText = oracleQuestions[randomIndex];
+
+            // カード反転アニメーション
+            const back = document.getElementById('card-back');
+            const front = document.getElementById('card-front');
+
+            back.style.transform = 'rotateY(180deg)';
+            back.style.opacity = '0';
+            back.style.pointerEvents = 'none';
+
+            front.style.transform = 'rotateY(0deg)';
+            front.style.opacity = '1';
+            front.style.pointerEvents = 'auto';
+
+            isFlipped = true;
+        }
+
+        function resetCard(event) {
+            // 親要素のクリックイベント（drawCard）の発火を防ぐ
+            event.stopPropagation();
+
+            const back = document.getElementById('card-back');
+            const front = document.getElementById('card-front');
+
+            back.style.transform = 'rotateY(0deg)';
+            back.style.opacity = '1';
+            back.style.pointerEvents = 'auto';
+
+            front.style.transform = 'rotateY(180deg)';
+            front.style.opacity = '0';
+            front.style.pointerEvents = 'none';
+
+            isFlipped = false;
+        }
+
+        // 料金計算シミュレーター
+        function selectPlan(planType) {
+            const selectEl = document.getElementById('form-plan');
+            selectEl.value = planType;
+            updatePrice(planType);
+            
+            // フォームまでスムーズスクロール
+            document.getElementById('reserve').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function updatePriceFromForm() {
+            const selectEl = document.getElementById('form-plan');
+            updatePrice(selectEl.value);
+        }
+
+        function updatePrice(planType) {
+            const priceText = document.getElementById('total-price');
+            const planText = document.getElementById('selected-plan-text');
+
+            if (planType === 'regular') {
+                priceText.innerText = '¥10,000';
+                planText.innerText = 'レギュラーサロン席';
+            } else if (planType === 'vip') {
+                priceText.innerText = '¥20,000';
+                planText.innerText = 'VIPソファー特別席';
+            }
+        }
+
+        // フォーム送信
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // 成功モーダルの表示
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            
+            // フォームリセット
+            document.getElementById('reservation-form').reset();
+            updatePrice('regular');
+        }
+    </script>
+</body>
+</html>
