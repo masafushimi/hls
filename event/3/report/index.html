@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>製薬コマーシャルモデル再設計とAI時代の医療インサイト - 詳細インフォグラフィック</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+            medical: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom utility scrollbars and transitions */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .badge-num { font-feature-settings: "tnum"; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-indigo-500 selection:text-white">
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <span class="p-2 bg-indigo-600 text-white rounded-xl shadow-md shadow-indigo-100 flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </span>
+      <div>
+        <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">製薬コマーシャルモデルの再設計</h1>
+        <p class="text-xs text-slate-500 hidden sm:block">AI時代の医師インサイト・組織構造改革・PSP社会実装の詳解</p>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center space-x-1 text-sm font-medium text-slate-600">
+      <a href="#overview" class="px-3 py-1.5 hover:text-indigo-600 hover:bg-slate-100 rounded-lg transition">概要</a>
+      <a href="#speaker1" class="px-3 py-1.5 hover:text-indigo-600 hover:bg-slate-100 rounded-lg transition">沼田氏: AIと環境</a>
+      <a href="#speaker2" class="px-3 py-1.5 hover:text-indigo-600 hover:bg-slate-100 rounded-lg transition">大角氏: コマーシャル&PSP</a>
+      <a href="#speaker3" class="px-3 py-1.5 hover:text-indigo-600 hover:bg-slate-100 rounded-lg transition">川野氏: マーケ&人材</a>
+      <a href="#discussion" class="px-3 py-1.5 hover:text-indigo-600 hover:bg-slate-100 rounded-lg transition">3者討議</a>
+      <a href="#takeaways" class="px-3 py-1.5 text-indigo-600 font-semibold bg-indigo-50 rounded-lg hover:bg-indigo-100 transition">提言</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+<section id="overview" class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl">
+  <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="relative z-10 space-y-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+      <span>業界ラウンドテーブル詳細分析</span>
+      <span>•</span>
+      <span>ミクス編集長 × コンサルタント × 製薬マーケター</span>
+    </div>
+    
+    <div class="max-w-3xl space-y-3">
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+        「薬が売れる保護構造」の終焉。<br class="hidden sm:inline">
+        エージェント型AIと地域医療構想が迫る変革の核心
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+        MR数の激減、医師の情報収集行動の激変（生成AIへの即時シフト）、希少疾患領域の過密競争。従来のプッシュ型・階層型コマーシャルモデルが限界を迎える中、3名のスペシャリストが語った現場の生々しいリアルデータと具体解を可視化。
+      </p>
+    </div>
+
+    <!-- 登壇者カード -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+      <div class="bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 flex items-start space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/30 flex items-center justify-center text-indigo-300 font-bold shrink-0">沼</div>
+        <div>
+          <div class="text-xs text-indigo-300 font-medium">株式会社ミクス代表取締役／ミクス編集長</div>
+          <div class="text-base font-bold text-white">沼田 佳之 氏</div>
+          <div class="text-xs text-slate-400 mt-1">ミクス初代編集長。業界の変遷、MRプロモーションのジレンマと役割変容を深く理解。業界を俯瞰したPatient Centricityの本質を紐解く。</div>
+        </div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 flex items-start space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/30 flex items-center justify-center text-emerald-300 font-bold shrink-0">大</div>
+        <div>
+          <div class="text-xs text-emerald-300 font-medium">ヘルスケアビジネスリード / 著者</div>
+          <div class="text-base font-bold text-white">大角 知也 氏</div>
+          <div class="text-xs text-slate-400 mt-1">IQVIAでの事業開発、FRONTEO医療AI責任者、TXP Medicalでの製薬ビジネスリードを歴任。AIエージェント、生成AIを活用したDTCからAI-PSPへのデータ面設計モデルを提示。</div>
+        </div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-sm p-4 rounded-2xl border border-white/10 flex items-start space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/30 flex items-center justify-center text-amber-300 font-bold shrink-0">川</div>
+        <div>
+          <div class="text-xs text-amber-300 font-medium">田辺ファーマ株式会社 執行役員 マーケティング本部長</div>
+          <div class="text-base font-bold text-white">川野 清伸 氏</div>
+          <div class="text-xs text-slate-400 mt-1">内資ブランド戦略を長年統括するトップ実務リーダー。現場推進時における売上、コンプラ、組織の壁の実例と変革戦略を共有。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 重要統計指標グリッド -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
+      <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60">
+        <div class="text-xs text-slate-400">Web講演会後の生成AI確認</div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 badge-num mt-1">約50<span class="text-lg font-normal">%</span></div>
+        <div class="text-[11px] text-slate-400 mt-1">若手医師（30-40代）は既に70%に肉薄</div>
+      </div>
+      <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60">
+        <div class="text-xs text-slate-400">Web講演会後にMRへ確認</div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-rose-400 badge-num mt-1">わずか15<span class="text-lg font-normal">%</span></div>
+        <div class="text-[11px] text-slate-400 mt-1">医師の情報確認チャネルはAIへ劇的転換</div>
+      </div>
+      <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60">
+        <div class="text-xs text-slate-400">難関薬のIC同意率</div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 badge-num mt-1">35<span class="text-lg font-normal">%</span></div>
+        <div class="text-[11px] text-slate-400 mt-1">認知度90%でも説明・同意に至らないボトルネック</div>
+      </div>
+      <div class="bg-slate-800/80 p-4 rounded-2xl border border-slate-700/60">
+        <div class="text-xs text-slate-400">実務上の発売準備期間</div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 badge-num mt-1">12〜24<span class="text-lg font-normal">M</span></div>
+        <div class="text-[11px] text-slate-400 mt-1">理想36Mに対し「12Mは死ぬかと思った」(川野氏)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaker1" class="space-y-6">
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-indigo-600"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Part 1 : 沼田氏プレゼンテーション</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">医療・製薬を取り巻くAI環境変化と医師の実態</h3>
+    </div>
+    <span class="text-xs font-semibold px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">自律型AIと医師行動の不可逆的変化</span>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- エージェンティックAIの解説 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">テクノロジーの進化</span>
+          <span class="px-2 py-0.5 text-[11px] font-semibold bg-slate-100 text-slate-600 rounded">骨太方針2024</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900 mt-2">「生成AI」から「エージェンティックAI（自律型）」へ</h4>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          従来の対話型QAにとどまらず、タスクを与えることでAIが自律的に多工程を実行・AI同士で連携（MCP連携等）する時代へ。政府のAI戦略本部でも重点化され、2026-27年度概算要求では「アッパーなし満額要求」として国策推進。
+        </p>
+        
+        <div class="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
+          <div class="text-xs font-bold text-slate-700">医療機関での実装イメージ（米国先行事例）:</div>
+          <ul class="text-xs text-slate-600 space-y-1.5 list-disc list-inside">
+            <li><span class="font-medium text-slate-800">医師・患者の対面問診:</span> AIがリアルタイム音声解析し自動スクリプト＆サマリー生成、電子カルテ自動格納。</li>
+            <li><span class="font-medium text-slate-800">看護記録:</span> 看護師が手元のスマホで音声入力し病院DBへ直結。</li>
+            <li><span class="font-medium text-slate-800">病院運営タスク:</span> 予約管理、受付、会計、コールセンターをAIエージェントが完全代行。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <span>狙い: 病院経営ROIの改善 & 医療従事者の負荷低減</span>
+      </div>
+    </div>
+
+    <!-- 医師の生成AI利用動向実態（ミクス・MCIデータ詳解） -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">調査データ分析</span>
+        <span class="px-2 py-0.5 text-[11px] font-semibold bg-indigo-50 text-indigo-600 rounded">ミクス / MCI調査</span>
+      </div>
+      <h4 class="text-lg font-bold text-slate-900 mt-2">医師のAI依存度と「MR訪問離れ」の構造要因</h4>
+      <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+        医師が製薬企業Web講演会を視聴した後、内容をどう確認するか。MRへの確認はわずか15%にとどまり、半数近くが生成AIで直接検証している。
+      </p>
+
+      <div class="mt-4 space-y-3">
+        <div>
+          <div class="flex justify-between text-xs font-medium mb-1">
+            <span class="text-slate-700">30〜40代医師の生成AI高頻度利用率</span>
+            <span class="font-bold text-indigo-600 badge-num">約 70%</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium mb-1">
+            <span class="text-slate-700">全体での活用/検討意向（2023年末）</span>
+            <span class="font-bold text-slate-700 badge-num">60.5% (活用31% + 検討29.5%)</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-slate-400 h-2.5 rounded-full" style="width: 60.5%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-xs font-medium mb-1">
+            <span class="text-slate-700">来期予想利用率（ミクス編集部試算）</span>
+            <span class="font-bold text-emerald-600 badge-num">70〜90% へ急増予測</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-800 leading-relaxed">
+        <strong>背景にある業界構造変化:</strong><br>
+        MRの総数削減に加え、製薬各社が生活習慣病薬（大量訪問型）からオンコロジーやCNS（専門特化型）へシフトしたことで、一般クリニックや地域病院への訪問頻度が激減。「聞きたくてもMRが来ない」医師の受け皿としてAIが定着。
+      </div>
+    </div>
+
+    <!-- 製薬モデルへのインパクトと組織改革 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">製薬企業の構造改革</span>
+          <span class="px-2 py-0.5 text-[11px] font-semibold bg-emerald-50 text-emerald-700 rounded">パラダイムシフト</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900 mt-2">エビデンスから「バリューベース」＆CXへ</h4>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          単に文献情報をばらまくオムニチャネルから、患者の治療アウトカムや体験価値（CX/PX）を高める活動への転換が必須。
+        </p>
+
+        <div class="mt-4 space-y-2.5">
+          <div class="flex items-start space-x-2 text-xs">
+            <span class="p-1 bg-indigo-100 text-indigo-700 rounded font-bold shrink-0">要件1</span>
+            <span class="text-slate-600"><strong class="text-slate-900">現場インサイトの定量化:</strong> 感覚値ではなく「面談医師の何割・患者群の何％がどの行動障害を抱えているか」をデータ化して本社へ上げるMRの高度スキル。</span>
+          </div>
+          <div class="flex items-start space-x-2 text-xs">
+            <span class="p-1 bg-indigo-100 text-indigo-700 rounded font-bold shrink-0">要件2</span>
+            <span class="text-slate-600"><strong class="text-slate-900">組織のアジャイル化:</strong> 本部長→支店→営業所の多重階層構造を脱し、プロダクトチーム×専門MR×メディカル×CXを横串連携させる機動的チームへの再編。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-indigo-50/50 rounded-xl border border-indigo-100 text-xs text-indigo-900 font-medium">
+        「医療機関のAI化に伴うタスク変化に対し、MR側がアジャイルに適応できるかが生き残りの分岐点となる」
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaker2" class="space-y-6">
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Part 2 : 大角氏プレゼンテーション</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">コマーシャルモデルの再設計とPSP社会実装</h3>
+    </div>
+    <span class="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">制度疲弊の克服と36ヶ月自走化モデル</span>
+  </div>
+
+  <!-- PEST分析マトリクス -->
+  <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h4 class="text-lg font-bold text-slate-900">医療環境のPEST分析（コマーシャルモデル崩壊の背景）</h4>
+        <p class="text-xs text-slate-500">1961年に確立された国民皆保険制度が60〜70年を経て限界に直面</p>
+      </div>
+      <span class="text-xs font-bold text-slate-400 tracking-wider">MACRO ENVIRONMENT</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-indigo-600 px-2 py-0.5 bg-indigo-100 rounded">P : 政治・制度</span>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+          <li>• 国民皆保険制度（1961年〜）の制度的限界</li>
+          <li>• ペイ・フォー・パフォーマンス（P4P）未成熟による医療従事者の過重労働</li>
+          <li>• 骨太方針における医療DX・AI政策の急伸</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-emerald-600 px-2 py-0.5 bg-emerald-100 rounded">E : 経済・薬価</span>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+          <li>• 医療費が50兆円へ急迫（患者数増より「単価増」が要因）</li>
+          <li>• 社会保障費約100兆円の圧迫</li>
+          <li>• 毎年の薬価引き下げ＆米国関税プレッシャー</li>
+          <li>• インフレ下での医療従事者（看護師等）給与格差</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-amber-600 px-2 py-0.5 bg-amber-100 rounded">S : 社会・患者</span>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+          <li>• 患者団体の発言権・社会進出の著しい拡大</li>
+          <li>• 高齢独居世帯の急増と地域孤立</li>
+          <li>• ガンが「死なない病気」化し長期共生へ</li>
+          <li>• 地域格差・所得格差・デジタル格差の深刻化</li>
+        </ul>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-black text-purple-600 px-2 py-0.5 bg-purple-100 rounded">T : 技術・AI</span>
+        </div>
+        <ul class="text-xs text-slate-600 space-y-1.5 leading-relaxed">
+          <li>• 米医師過半数が「Open Evidence」等論文AIを活用</li>
+          <li>• コールセンターやFAQ業務の自律エージェント化</li>
+          <li>• 外部AI依存リスクと「AIソブリン化（国内自立）」</li>
+          <li>• リアルワールドデータ（RWD）活用の進展</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PSPの構造と36ヶ月自走化モデル -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- 左：PSPのボトルネック分析（ICの壁） -->
+    <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">PSPの最大難関</span>
+          <span class="px-2 py-0.5 text-[11px] font-semibold bg-rose-50 text-rose-600 rounded">ファネル分析</span>
+        </div>
+        <h4 class="text-lg font-bold text-slate-900 mt-2">薬剤認知90%でも同意は35%：「ICの壁」</h4>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          優れた新薬であっても、疾患や機序が高度化・複雑化するにつれ、医師が患者に平易に説明できず、患者側も理解できず治療同意に至らないドロップアウトが多発している。
+        </p>
+
+        <!-- ファネル図 -->
+        <div class="mt-4 space-y-2">
+          <div class="p-2.5 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-700">医師の薬剤認知度</span>
+            <span class="font-extrabold text-indigo-700 badge-num text-sm">90% 以上</span>
+          </div>
+          <div class="p-2.5 bg-indigo-50/70 border-l-4 border-indigo-400 rounded-r-lg flex justify-between items-center text-xs ml-3">
+            <span class="font-medium text-slate-700">インフォームドコンセント（IC）実施可能</span>
+            <span class="font-extrabold text-indigo-600 badge-num text-sm">約 70%</span>
+          </div>
+          <div class="p-2.5 bg-rose-50 border-l-4 border-rose-500 rounded-r-lg flex justify-between items-center text-xs ml-6 shadow-sm">
+            <span class="font-bold text-rose-900">実際に患者のIC同意が得られる割合</span>
+            <span class="font-black text-rose-600 badge-num text-base">わずか 35%</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+          従来の「認知向上」施策はすでに機能しており、今製薬企業が支援すべきは<strong>「医師のIC説明支援」</strong>および<strong>「患者・家族の疾患理解支援」</strong>である。
+        </p>
+      </div>
+
+      <div class="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-600">
+        <strong>海外の先進事例:</strong> 高額薬へのアクセスを担保するファイナンシャルサポート（経済支援）やBeyond the Pill（行動変容アプリ）のバンドル。
+      </div>
+    </div>
+
+    <!-- 右：大角氏提唱「36ヶ月モデル」とADDIEフレームワーク -->
+    <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">持続可能な社会実装</span>
+        <span class="px-2 py-0.5 text-[11px] font-semibold bg-emerald-50 text-emerald-700 rounded">ADDIE循環アプローチ</span>
+      </div>
+      <h4 class="text-lg font-bold text-slate-900">製薬企業主導から社会自立へ移管する「36ヶ月モデル」</h4>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        製薬企業が永遠にPSPコストを抱え続けるのではなく、発売後36ヶ月で標準化ノウハウを医療機関・自治体・患者団体へ還元し、自走化させるフレームワーク。
+      </p>
+
+      <!-- タイムラインステップ -->
+      <div class="relative border-l-2 border-emerald-300 ml-4 pl-4 space-y-4 my-2">
+        <div class="relative">
+          <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-emerald-600 border-2 border-white"></span>
+          <div class="text-xs font-bold text-emerald-800">承認前（ローンチ前）: 障壁分析とMVP設計</div>
+          <p class="text-xs text-slate-600 mt-0.5">医師・患者インサイトを徹底調査。最小限の実用プロダクト（MVP）を設計し初期仮説を立てる。</p>
+        </div>
+
+        <div class="relative">
+          <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white"></span>
+          <div class="text-xs font-bold text-emerald-800">0 〜 12ヶ月: 小規模PoCと現場実装</div>
+          <p class="text-xs text-slate-600 mt-0.5">現場MRおよびPSPを小規模に投入。現場のリアルな運用課題をインプルーブ（改善）しながら検証。</p>
+        </div>
+
+        <div class="relative">
+          <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white"></span>
+          <div class="text-xs font-bold text-emerald-800">12 〜 24ヶ月: プロセス標準化とエクスパンド</div>
+          <p class="text-xs text-slate-600 mt-0.5">有効性が証明されたモデルを形式知化・標準化（SOP化）し、対象医療圏を拡大。</p>
+        </div>
+
+        <div class="relative">
+          <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-indigo-600 border-2 border-white"></span>
+          <div class="text-xs font-bold text-indigo-900">36ヶ月〜: 自走化と社会インフラ移管</div>
+          <p class="text-xs text-slate-600 mt-0.5">ノウハウを自治体・医療機関・患者団体へ移管。企業は固定コストを削減しつつ薬の持続的アウトカムを維持。</p>
+        </div>
+      </div>
+
+      <!-- ゴール階層ピラミッド -->
+      <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 flex items-center justify-between text-xs">
+        <div class="font-bold text-emerald-900">最上位KGI: 治療アウトカム（患者QOL向上）</div>
+        <div class="text-slate-500 text-[11px]">≠ 単なる薬剤売上やコール数・登録者数</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaker3" class="space-y-6">
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Part 3 : 川野氏プレゼンテーション</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">実務から見たマーケティング変革とケイパビリティ</h3>
+    </div>
+    <span class="text-xs font-semibold px-3 py-1 bg-amber-50 text-amber-700 rounded-full border border-amber-200">11製品ローンチの知見と参与観察アプローチ</span>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- 情報非対称性の崩壊と解釈プロセス -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">情報の真実</span>
+        <span class="px-2 py-0.5 text-[11px] font-semibold bg-slate-100 text-slate-600 rounded">意思決定論</span>
+      </div>
+      <h4 class="text-lg font-bold text-slate-900">「情報があること」と「解釈・判断」の決定的な乖離</h4>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        かつては製薬企業が圧倒的に情報を握っていたが今はフラット。しかし、断片的な情報がネット上に溢れることと、それを正しく解釈し治療判断を下すことは全くの別物である。
+      </p>
+
+      <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-100 text-xs text-amber-900 space-y-1.5">
+        <div class="font-bold">抜け落ちた「泥臭い対話プロセス」:</div>
+        <p class="text-slate-600 leading-relaxed">
+          昔はMRが医師と面談・雑談を重ねる中で情報の真偽や解釈をディスカッションし、納得の上で処方に反映されていた。若手医師がAIのサマリーだけで治療判断を下す現代において、その判断が妥当かを検証・壁打ちする場が喪失している。
+        </p>
+      </div>
+
+      <div class="text-xs text-slate-500">
+        <strong>市場の過密化:</strong> 希少疾患領域すら10製剤が競合し「ブルーオーシャンは完全消滅」。ファースト・イン・クラス以外はプライマリ同様の激戦。
+      </div>
+    </div>
+
+    <!-- 参与観察（エスノグラフィー）への着目 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">リサーチの限界突破</span>
+        <span class="px-2 py-0.5 text-[11px] font-semibold bg-amber-50 text-amber-700 rounded">現場浸透手法</span>
+      </div>
+      <h4 class="text-lg font-bold text-slate-900">プライマリリサーチの限界と「参与観察（エスノグラフィー）」</h4>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        定量調査や形式的な医師インタビュー（プライマリリサーチ）では、真のインサイトは出てこない。さらにコロナ禍以降、製薬社員の病院立ち入りや院内研修機会が激減。
+      </p>
+
+      <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+        <div class="text-xs font-bold text-slate-800">インテージ社などの「参与観察手法」への着目:</div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          相手の生活や院内環境に完全に入り込み、観察対象者になりきって悩みを抽出する。客観的な第三者インタビューではなく、対象の内側に同化して初めて真の課題が可視化される。
+        </p>
+      </div>
+
+      <p class="text-xs text-slate-500">
+        患者側の情報量も増え、ドクターに意見する時代。「ドクターを透かして患者視点で医療を見る」二重のアプローチが不可欠。
+      </p>
+    </div>
+
+    <!-- 田辺ファーマでの11スキル・6コンピテンシー & AI活用課題 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">人材・組織ケイパビリティ</span>
+        <span class="px-2 py-0.5 text-[11px] font-semibold bg-indigo-50 text-indigo-700 rounded">田辺ファーマ実践例</span>
+      </div>
+      <h4 class="text-lg font-bold text-slate-900">求められる2大資質:「イシュー設定」と「好奇心」</h4>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        AIが作業を代替する時代、マーケターに最も求められるのは「どんな問い（イシュー）を投げかけるか」と「新しい環境へ果敢に挑む好奇心（Curiosity）」。
+      </p>
+
+      <div class="space-y-2">
+        <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+          <span class="font-bold text-indigo-700">1. イシュー設定能力:</span>
+          <span class="text-slate-600 ml-1">AIを使えても適切な問いを設定できなければ何も始まらない。</span>
+        </div>
+        <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200 text-xs">
+          <span class="font-bold text-amber-700">2. Curiosity (行動を伴う好奇心):</span>
+          <span class="text-slate-600 ml-1">職務定義（ジョブ記述）の枠にとらわれず自律的に動く資質。</span>
+        </div>
+      </div>
+
+      <!-- AI活用の影 -->
+      <div class="p-3 bg-rose-50 rounded-xl border border-rose-100 text-xs text-rose-900 leading-relaxed">
+        <strong>現場でのリアルな弊害:</strong><br>
+        思考力や論理構成をAIに丸投げした結果、短時間で綺麗な資料はできるが「本人の気持ちが入っておらず説明できない」人材育成上の課題。トークン課金の膨張などコスト規律も急務。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="discussion" class="space-y-6">
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-purple-600"></span>
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-600">Part 4 : 3者ディスカッション完全詳細</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">アドリブ討議から浮かび上がった業界の真のボトルネック</h3>
+    </div>
+    <span class="text-xs font-semibold px-3 py-1 bg-purple-50 text-purple-700 rounded-full border border-purple-200">組織・準備期間・地域医療の激論</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- テーマ1: 組織とレイヤー -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-extrabold flex items-center justify-center text-xs">1</span>
+          <h4 class="text-base font-bold text-slate-900">組織構造と人材育成の断絶</h4>
+        </div>
+        <div class="space-y-2 text-xs leading-relaxed text-slate-600">
+          <p><strong class="text-slate-800">沼田氏:</strong> 本社と現場の階層（レイヤー）が多すぎるとリアルタイムな情報連携が阻害される。現場インサイトを「定量化」して上げられるかが鍵だが、現在の階層組織では機能しない。</p>
+          <p><strong class="text-slate-800">川野氏:</strong> レイヤーを通すと「情報が化ける（本質が消える）」。レイヤーは最小化すべき。一方で、階層があった方が昔は教育効果もあった。</p>
+          <p><strong class="text-slate-800">川野氏の苦悩:</strong> 今はリモートワークと残業40時間規制で、かつてのように「机を突き合わせてOJTで教え込む」ことが完全に不可能。外で自発的に学ぶ余裕も限られ、育成が最大の壁。</p>
+          <p><strong class="text-slate-800">大角氏:</strong> 『ザ・モデル』のように職能を過度に分断（サイロ化）せず、インクルーシブにプロジェクト単位で回せる組織こそが理想。</p>
+        </div>
+      </div>
+      <div class="p-3 bg-purple-50 rounded-xl text-xs font-medium text-purple-900">
+        合意点: 多段階ピラミッドの解体と、フラットなアジャイル・プロジェクト型への再編
+      </div>
+    </div>
+
+    <!-- テーマ2: ローンチ準備の実態 -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-extrabold flex items-center justify-center text-xs">2</span>
+          <h4 class="text-base font-bold text-slate-900">ローンチ・プレパレーションの虚実</h4>
+        </div>
+        <div class="space-y-2 text-xs leading-relaxed text-slate-600">
+          <p><strong class="text-slate-800">大角氏の提言:</strong> 理想は「承認後36ヶ月で完全自立（社会移管）」させるモデル。ローンチ前12ヶ月から準備を始めるべき。</p>
+          <p><strong class="text-slate-800">川野氏の実体験:</strong> 「ローンチ前12ヶ月（マイナス12M）からの準備は、死ぬかと思った」。11品目の実務からすると、最低でも24M、理想は36M前からチームが組成されていること。</p>
+          <p><strong class="text-slate-800">現実の障壁:</strong> 既存主力品の売上に追われ、先の新薬へリソースを先行配分できない。また、開発やBD（事業開発）のアーリーフェーズからマーケティングが噛み合う体制（米国型）が不十分。</p>
+        </div>
+      </div>
+      <div class="p-3 bg-rose-50 rounded-xl text-xs font-medium text-rose-900">
+        実態: 理想（36M前）と現実（12M前の突貫工事）の乖離。開発・BD・商業の早期クロスファンクショナル化が急務
+      </div>
+    </div>
+
+    <!-- テーマ3: 地域格差と規制産業の甘え -->
+    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+      <div class="space-y-3">
+        <div class="flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 font-extrabold flex items-center justify-center text-xs">3</span>
+          <h4 class="text-base font-bold text-slate-900">地域医療圏格差と業界の「保護体質」</h4>
+        </div>
+        <div class="space-y-2 text-xs leading-relaxed text-slate-600">
+          <p><strong class="text-slate-800">沼田氏の警鐘:</strong> 「オールジャパン一律」で戦略を考えるのは完全に間違い。2次医療圏ごとに高齢化・人口減少の進展速度は全く異なる。急性期中心から介護・在宅施設へシフトする中、個々の地域に即応したアプローチが必要。</p>
+          <p><strong class="text-slate-800">川野氏の同意:</strong> 都市部と地方（ルーラル）では状況が激変。MRは医師単体へのアプローチから、看護師・自治体・患者団体を含むステークホルダー全体の課題解決役へ再定義が必要。</p>
+          <p><strong class="text-slate-800">新薬アクセス問題:</strong> ドラッグ・ラグ/ロスや新薬供給停止に対し、製薬企業が患者負担のあり方（自助・共助・公助の整理）を前向きに発信しなければ社会から見放される。</p>
+        </div>
+      </div>
+      <div class="p-3 bg-amber-50 rounded-xl text-xs font-medium text-amber-900">
+        警鐘: 「一律全国プロモーション」の完全な限界。地域包括ケア単位でのエリアマーケティングへ
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+  <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div>
+      <h3 class="text-lg sm:text-xl font-bold text-slate-900">製薬コマーシャルモデル 新旧対比サマリー</h3>
+      <p class="text-xs text-slate-500">本ディスカッションで定義されたパラダイムシフトの全容</p>
+    </div>
+    <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">比較総覧</span>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-xs sm:text-sm text-slate-600 border-collapse">
+      <thead>
+        <tr class="bg-slate-50 text-slate-900 border-b border-slate-200">
+          <th class="py-3 px-4 font-bold w-1/5">項目</th>
+          <th class="py-3 px-4 font-bold w-2/5 text-slate-500">従来のコマーシャルモデル</th>
+          <th class="py-3 px-4 font-bold w-2/5 text-indigo-600 bg-indigo-50/50">これからの新コマーシャルモデル</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">情報流通・医師関係</td>
+          <td class="py-3.5 px-4">情報の非対称性（企業が主導）。Web講演会＋MR直接訪問による一方通行プッシュ。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">医師がAIで即時検証。自律型AI活用、真偽と解釈の壁打ちパートナー、患者目線の共有。</td>
+        </tr>
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">MRの役割と評価</td>
+          <td class="py-3.5 px-4">担当製品の売上達成・SOV（シェア・オブ・ボイス）。医師への面談回数と資材提供。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">現場課題の「定量化フィードバック」、IC（説明同意）支援、地域ステークホルダー課題解決。</td>
+        </tr>
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">組織構造（営業・本社）</td>
+          <td class="py-3.5 px-4">ピラミッド型階層（本部長→支店長→営業所長）。職務分断（ザ・モデル型サイロ）。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">レイヤー最小化・アジャイル組織。プロダクト×専門MR×メディカル×CXの横串連携。</td>
+        </tr>
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">PSP・患者支援の指標</td>
+          <td class="py-3.5 px-4">患者登録数・コールセンター受電数・企業側の継続コスト負担。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">最上位KGI＝治療アウトカム（QOL向上）。36ヶ月での標準化・地域インフラへの自走化移管。</td>
+        </tr>
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">地域アプローチ</td>
+          <td class="py-3.5 px-4">オールジャパン（全国一律）の施策展開。大病院・中核病院中心のアプローチ。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">2次医療圏単位の高齢化・人口動態格差に応じたリアルタイム施策。介護・多職種連携。</td>
+        </tr>
+        <tr>
+          <td class="py-3.5 px-4 font-bold text-slate-900">マーケターの能力要件</td>
+          <td class="py-3.5 px-4">規定の戦術プラン策定、資材作成、定例業務の着実な遂行（JOB記述準拠）。</td>
+          <td class="py-3.5 px-4 bg-indigo-50/30 text-indigo-950 font-medium">「イシュー設定（問いを立てる力）」、「Curiosity（好奇心）」、AIを壁打ちに使った仮説検証。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="takeaways" class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-6 sm:p-10 rounded-3xl shadow-xl space-y-6">
+  <div class="border-b border-indigo-700/60 pb-4 flex items-center justify-between">
+    <div>
+      <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Take-home Messages</span>
+      <h3 class="text-xl sm:text-2xl font-bold mt-1">登壇者からの最終提言：「変革を起こすマインド」</h3>
+    </div>
+    <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-semibold text-slate-300">結びのメッセージ</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- 沼田氏メッセージ -->
+    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+      <div class="flex items-center space-x-3">
+        <span class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-sm">沼</span>
+        <div>
+          <div class="text-sm font-bold">沼田 佳之 氏（株式会社ミクス 代表取締役／ミクス編集長）</div>
+          <div class="text-xs text-indigo-300">変化を恐れるのではなく、変わることを楽しんで実行する</div>
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+        「時代が大きく変わっている中で、変わっていくことは恐れることではなく、当然のことだと自分に言い聞かせる。AIについてあれこれ議論するだけでなく、実際に使って何ができるか、そこに賭けて実行していく姿勢が求められている。」
+      </p>
+    </div>
+
+    <!-- 川野氏メッセージ -->
+    <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+      <div class="flex items-center space-x-3">
+        <span class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center font-bold text-sm">川</span>
+        <div>
+          <div class="text-sm font-bold">川野 清伸 氏（田辺ファーマ株式会社 執行役員 マーケティング本部長）</div>
+          <div class="text-xs text-amber-300">保護された規制産業の甘えを捨て、自ら変化を起こす</div>
+        </div>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+        「製薬業界はある意味保護されており、変わらなくてもまだ薬が売れてしまう。だからこそ『お尻に火がつかない』状態にある。与えられた環境に甘んじることなく、自ら変革を起こしていく強い意志を持って新しい挑戦を推進していきたい。」
+      </p>
+    </div>
+  </div>
+
+  <!-- アクションチェックリスト -->
+  <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-white/15 space-y-3">
+    <div class="text-xs font-bold uppercase tracking-wider text-indigo-300">製薬企業が明日から着手すべきアクションチェックリスト:</div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-200">
+      <div class="p-3 bg-black/20 rounded-xl flex items-start space-x-2">
+        <span class="text-emerald-400 font-bold">✓</span>
+        <span><strong>現場インサイトの定量化:</strong> MRの面談ログを定性文章から、医師・患者行動障害の比率データへと標準化。</span>
+      </div>
+      <div class="p-3 bg-black/20 rounded-xl flex items-start space-x-2">
+        <span class="text-emerald-400 font-bold">✓</span>
+        <span><strong>IC説明支援ツールの共創:</strong> 認知度（90%）と同意率（35%）の断絶を埋める説明ツールの医療従事者共創。</span>
+      </div>
+      <div class="p-3 bg-black/20 rounded-xl flex items-start space-x-2">
+        <span class="text-emerald-400 font-bold">✓</span>
+        <span><strong>2次医療圏別エリア戦略:</strong> 全国一律のプロモーションを廃止し、地域包括ケア・介護推移に応じた組織配分。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
+  <p>© 2026 製薬コマーシャルモデル再設計・AI活用インサイト研究会. All rights reserved.</p>
+  <p class="mt-1">※本インフォグラフィックは収録音声の完全文字起こしに基づき、詳細な発言・論点を視覚的に構造化したものです。</p>
+</footer>
+
+</body>
+</html>
